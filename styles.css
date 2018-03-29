@@ -1,0 +1,33 @@
+body {
+    background: #333;
+}
+
+.box  {
+    background: white;
+    width: 200px;
+    height: 200px;
+    position: relative; /* ska flyttas runt */
+    animation-name: myanimation;
+    animation-duration: 5s;
+    animation-iteration-count: 3;
+
+    animation-delay: 1s;
+    animation-direction: alternate; 
+    /* animation-direction: reverse;  baklänges*/
+    animation-timing-function: ease-in-out;
+    /* Hur den startar och avslutar animationen. */
+    animation-fill-mode: forwards;
+    /* Stannar med sista formen (cirkel). Annars stannar 
+    den som en kvadrat. */
+    
+}
+
+@keyframes myanimation {
+    /* Här anges vad som ska ske med boxen vid 
+    olika tidpunkter (0-100%) */
+    0% {background-color: white; left: 0px; top: 0px; border-radius: 0 0 0 0;}
+    25% {background-color: red; left: 300px; top: 0px;border-radius: 50% 0 0 0;}
+    50% {background-color: green; left: 300px; top: 300px; border-radius: 50% 50% 0 0;}
+    75% {background-color: blue; left: 0px; top: 300px; border-radius: 50% 50% 50% 0;}
+    100% {background-color: white; left: 0px; top: 0px; border-radius: 50% 50% 50% 50%;}
+}
